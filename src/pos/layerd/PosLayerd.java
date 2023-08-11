@@ -4,6 +4,8 @@
  */
 package pos.layerd;
 
+import pos.layerd.view.LayoutView;
+
 /**
  *
  * @author DELL i5
@@ -14,7 +16,7 @@ public class PosLayerd {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello");
+        new LayoutView().setVisible(true);
     }
     
 }
