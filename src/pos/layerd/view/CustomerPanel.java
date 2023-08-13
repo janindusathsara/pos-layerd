@@ -70,7 +70,7 @@ public class CustomerPanel extends javax.swing.JPanel {
         customerTable = new javax.swing.JTable();
 
         headerLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        headerLabel.setText(" Manage  Customer");
+        headerLabel.setText("  Manage  Customer");
 
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);

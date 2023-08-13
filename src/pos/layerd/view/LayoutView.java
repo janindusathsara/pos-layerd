@@ -67,6 +67,11 @@ public class LayoutView extends javax.swing.JFrame {
 
         manageItemButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         manageItemButton.setText("Manage Item");
+        manageItemButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manageItemButtonActionPerformed(evt);
+            }
+        });
 
         orderButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         orderButton.setText("Order");
@@ -133,6 +138,10 @@ public class LayoutView extends javax.swing.JFrame {
         loadCustomerPanel();
     }//GEN-LAST:event_manageCustomerButtonActionPerformed
 
+    private void manageItemButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageItemButtonActionPerformed
+        loadItemPanel();
+    }//GEN-LAST:event_manageItemButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bodyPanel;
     private javax.swing.JLabel headerLabel;
@@ -148,6 +157,15 @@ public class LayoutView extends javax.swing.JFrame {
         CustomerPanel customerPanel = new CustomerPanel();
         customerPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
         bodyPanel.add(customerPanel);
+        bodyPanel.repaint();
+        bodyPanel.revalidate();
+    }
+
+    private void loadItemPanel() {
+        bodyPanel.removeAll();
+        ItemPanel itemPanel = new ItemPanel();
+        itemPanel.setSize(bodyPanel.getWidth(), bodyPanel.getHeight());
+        bodyPanel.add(itemPanel);
         bodyPanel.repaint();
         bodyPanel.revalidate();
     }

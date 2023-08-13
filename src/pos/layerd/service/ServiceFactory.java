@@ -5,34 +5,37 @@
 package pos.layerd.service;
 
 import pos.layerd.service.custom.impl.CustomerServiceImpl;
+import pos.layerd.service.custom.impl.ItemServiceImpl;
 
 /**
  *
  * @author DELL i5
  */
 public class ServiceFactory {
-    
+
     private static ServiceFactory serviceFactory;
-    
-    public static ServiceFactory getInstance(){
-        if(serviceFactory == null){
+
+    public static ServiceFactory getInstance() {
+        if (serviceFactory == null) {
             serviceFactory = new ServiceFactory();
         }
-        
+
         return serviceFactory;
     }
-    
-    public SuperService getService(ServiceType type){
+
+    public SuperService getService(ServiceType type) {
         switch (type) {
             case CUSTOMER:
                 return new CustomerServiceImpl();
+            case ITEM:
+                return new ItemServiceImpl();
             default:
                 return null;
         }
     }
-    
-    public enum ServiceType{
-        CUSTOMER
+
+    public enum ServiceType {
+        CUSTOMER, ITEM
     }
-    
+
 }
